@@ -1,0 +1,1082 @@
+desc dataemp 
+
+insert into dataemp (name,Email,Mobile)
+values("Joe","J@gmail.com",98989898)
+
+insert into dataemp values ("101","Sundar","S@gmail.com",9790367105)
+
+update dataemp set name="Sundarrajan" where id =100
+
+delete from   dataemp  where id =21
+
+insert into dataemp values ("21","Sundar","S@gmail.com",990367105)
+
+alter table dataemp modify Mobile varchar(13)
+
+insert into dataemp values ("33","Sundararajan","S@gmail.com",09790367105)
+
+insert into dataemp values ("34","Sundararajan","S@gmail.com",+919790367105)
+
+
+
+
+use checkdb
+
+-- insert into checktabless (rno,date)
+-- values(1,"1995-06-27")
+
+insert into checktabless (rno,date)
+values(1,"1995-06-27")
+
+insert into datemethod values(1,"2022-6-27")
+
+CREATE TABLE demo_one(
+    demo_one_id INT NOT NULL,
+    demo_one_timestamp TIMESTAMP NOT NULL,
+    PRIMARY KEY(demo_one_id)
+);
+
+desc demo_one 
+
+INSERT INTO demo_one (demo_one_id, demo_one_timestamp)
+VALUES
+(1, NOW());
+
+
+insert into time(id,date)
+values(1,now())
+
+insert into time(id,date)
+values(2,now())
+
+
+
+insert into data (name,age,salary,doj)
+values("Dinesh",22,26000,now()),
+("balaj",21,2000,now()),
+("mathan",29,35000,now())
+
+
+select * from data where salary > 25000
+
+
+select * from data where salary <> 26000 
+
+
+select * from data where age <= 25 and salary >=26000
+
+
+select * from data where salary +10000
+
+select salary from data
+
+select * from data
+where name ="balaj" or  salary =20000
+
+select * from data order by name
+
+select 
+replace ("karthi","karthi","mathan")
+
+select * from data
+
+update data 
+set name = replace ("karthi","karthi","mathan2")
+
+select id,name , replace (name,"mathan2","karthi") As `replaced name `from data
+
+select name, replace (name,"mathan2","karthi") from data where name = 'mathan2'
+
+select * from data
+
+
+update data set name = replace(name, "karthi","mathan")
+
+update data set age = replace (age,29,20)
+
+update data set doj = replace(doj,now(),now())
+
+
+use checkdb
+
+-- insert into checktabless (rno,date)
+-- values(1,"1995-06-27")
+
+insert into checktabless (rno,date)
+values(1,"1995-06-27")
+
+insert into datemethod values(1,"2022-6-27")
+
+CREATE TABLE demo_one(
+    demo_one_id INT NOT NULL,
+    demo_one_timestamp TIMESTAMP NOT NULL,
+    PRIMARY KEY(demo_one_id)
+);
+
+desc demo_one 
+
+INSERT INTO demo_one (demo_one_id, demo_one_timestamp)
+VALUES
+(1, NOW());
+
+
+insert into time(id,date)
+values(1,now())
+
+insert into time(id,date)
+values(2,now())
+
+
+
+insert into data (name,age,salary,doj)
+values("Dinesh",22,26000,now()),
+("balaj",21,2000,now()),
+("mathan",29,35000,now())
+
+
+select * from data where salary > 25000
+
+
+select * from data where salary <> 26000 
+
+
+select * from data where age <= 25 and salary >=26000
+
+
+select * from data where salary +10000
+
+select salary from data
+
+select * from data
+where name ="balaj" or  salary =20000
+
+select * from data order by name
+
+select 
+replace ("karthi","karthi","mathan")
+
+select * from data
+
+update data 
+set name = replace ("karthi","karthi","mathan2")
+
+select id,name , replace (name,"mathan2","karthi") As `replaced name `from data
+
+select name, replace (name,"mathan2","karthi") from data where name = 'mathan2'
+
+select * from data
+
+
+update data set name = replace(name, "karthi","mathan")
+
+update data set age = replace (age,29,20)
+
+update data set doj = replace(doj,now(),now())
+
+
+select concat("karthi"," ","keyan") 
+
+select * from data
+
+update data set name = concat(name,"karthi","","keyan")
+
+select * from data
+
+update data set name = concat(name="mathankarthi keyankarthikeyan","","mathan") 
+
+select * from data
+
+update data set name = concat(name="mathan","","mathan")
+
+alter table  datemethod modify doj  TIMESTAMP NOT NULL
+
+
+create table students(
+student_id int auto_increment,
+name varchar(20),
+primary key (student_id)
+);
+
+
+CREATE TABLE committees (
+    committee_id INT AUTO_INCREMENT,
+    name VARCHAR(100),
+    PRIMARY  KEY (committee_id)
+);
+
+
+insert into members(name)
+values("karthi"),("mathan"),("David"),("partha")
+
+
+insert into committees (name)
+values("Joe"),("Magi"),("balaji"),("benial")
+
+
+select * from members
+
+SELECT 
+    m.member_id, 
+    m.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members m
+INNER JOIN committees c ON c.name = m.name;
+
+
+
+update committees set name="Jyothes" where  committee_id=1
+
+insert into members(name)
+values("karthi"),("mathan"),("David"),("partha")
+
+SELECT 
+    m.member_id, 
+    m.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members m
+INNER JOIN committees c ON c.name = m.name;
+
+select * from committees
+
+insert into members(name)
+values("balaji"),("gowtham"),("arun"),("karthi")
+
+insert into committees(name)
+values("Honda"),("BMW"),("AUDI"),("Benz")
+
+SELECT 
+    m.member_id, 
+    m.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members m
+INNER JOIN committees c ON c.committee_id = m.member_id;
+
+SELECT 
+    m.member_id, 
+    m.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members m
+LEFT JOIN committees c USING(name);
+
+select * from  committees
+
+---------------------------------------------------------------------------
+use checkdb
+
+-- insert into checktabless (rno,date)
+-- values(1,"1995-06-27")
+
+insert into checktabless (rno,date)
+values(1,"1995-06-27")
+
+insert into datemethod values(1,"2022-6-27")
+
+CREATE TABLE demo_one(
+    demo_one_id INT NOT NULL,
+    demo_one_timestamp TIMESTAMP NOT NULL,
+    PRIMARY KEY(demo_one_id)
+);
+
+desc demo_one 
+
+INSERT INTO demo_one (demo_one_id, demo_one_timestamp)
+VALUES
+(1, NOW());
+
+
+insert into time(id,date)
+values(1,now())
+
+insert into time(id,date)
+values(2,now())
+
+
+
+insert into data (name,age,salary,doj)
+values("Dinesh",22,26000,now()),
+("balaj",21,2000,now()),
+("mathan",29,35000,now())
+
+
+select * from data where salary > 25000
+
+
+select * from data where salary <> 26000 
+
+
+select * from data where age <= 25 and salary >=26000
+
+
+select * from data where salary +10000
+
+select salary from data
+
+select * from data
+where name ="balaj" or  salary =20000
+
+select * from data order by name
+
+select 
+replace ("karthi","karthi","mathan")
+
+select * from data
+
+update data 
+set name = replace ("karthi","karthi","mathan2")
+
+select id,name , replace (name,"mathan2","karthi") As `replaced name `from data
+
+select name, replace (name,"mathan2","karthi") from data where name = 'mathan2'
+
+select * from data
+
+
+update data set name = replace(name, "karthi","mathan")
+
+update data set age = replace (age,29,20)
+
+update data set doj = replace(doj,now(),now())
+
+
+select concat("karthi"," ","keyan") 
+
+select * from data
+
+update data set name = concat(name,"karthi","","keyan")
+
+select * from data
+
+update data set name = concat(name="mathankarthi keyankarthikeyan","","mathan") 
+
+select * from data
+
+update data set name = concat(name="mathan","","mathan")
+
+alter table  datemethod modify doj  TIMESTAMP NOT NULL
+
+
+create table students(
+student_id int auto_increment,
+name varchar(20),
+primary key (student_id)
+);
+
+
+CREATE TABLE committees (
+    committee_id INT AUTO_INCREMENT,
+    name VARCHAR(100),
+    PRIMARY  KEY (committee_id)
+);
+
+
+insert into members(name)
+values("karthi"),("mathan"),("David"),("partha")
+
+
+insert into committees (name)
+values("Joe"),("Magi"),("balaji"),("benial")
+
+
+select * from members
+
+SELECT 
+    m.member_id, 
+    m.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members m
+INNER JOIN committees c ON c.name = m.name;
+
+
+
+update committees set name="Jyothes" where  committee_id=1
+
+insert into members(name)
+values("karthi"),("mathan"),("David"),("partha")
+
+SELECT 
+    m.member_id, 
+    m.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members m
+INNER JOIN committees c ON c.name = m.name;
+
+select * from committees
+
+insert into members(name)
+values("balaji"),("gowtham"),("arun"),("karthi")
+
+insert into committees(name)
+values("Honda"),("BMW"),("AUDI"),("Benz")
+
+SELECT 
+    m.member_id, 
+    m.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members m
+INNER JOIN committees c ON c.committee_id = m.member_id;
+
+SELECT 
+    m.member_id, 
+    m.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members m
+LEFT JOIN committees c USING(name);
+
+
+select 
+AVG( salary)
+from data;
+
+
+
+select 
+MIN( salary)
+from data;
+
+select 
+max(salary) from data
+
+select count(salary)  from data
+
+
+select sum(salary) from data
+
+SELECT id,
+case  
+  when salary  > 20000 THEN 'The salary is greater than 20000'
+  when salary = 2000 THEN 'The salary is 2000'
+  ELSE 'The salary is something else'
+END
+FROM data;
+
+-- ALTER TABLE data ADD (City VARCHAR(20),Marks INT);
+
+ALTER TABLE data DROP COLUMN City
+
+SELECT 
+    r.member_id, 
+    r.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members r
+INNER JOIN committees c ON c.name = r.name;
+
+delete from   members  where member_id =7
+
+
+
+insert into members (name)
+values("karthi"),("mathan"),("bashid"),("incase")
+
+insert into committees (name)
+values("Partha"),("Joe"),("bashid"),("incase")
+
+select 
+
+SELECT 
+    r.member_id, 
+    r.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members r
+INNER JOIN committees c ON member_id = committee_id;
+
+
+select 
+		r.member_id,
+		r.name as member,
+		c.committee_id,
+		c.name as committee
+from 
+	members r
+left join committees c using(name)
+where c.committee_id is not null
+
+select 
+		r.member_id,
+		r.name as member,
+		c.committee_id,
+		c.name as committee
+	from members r
+right join committees c on c.name =r.name ;
+ 
+
+
+
+-----------------_-----------_-------------_----------------------
+
+create table univer(
+id int auto_increment,
+univercity_id int ,
+univercity_name varchar(255),
+primary key(id)
+)
+
+create table students(
+id int,
+student_id int ,
+full_name varchar(255) ,
+gender varchar(255),
+university_id int 
+
+)
+
+create table contacts(
+contact_id int,
+mobile_number int ,
+email_address varchar(255) ,
+student_id int 
+
+)
+
+insert into univer (univercity_id,univercity_name)
+values (1001,"AnnaUnivercity"),
+		(1002,"Annamaliunivercity"),
+		(1003,"Anna univercity"),
+		(1004,"Akka univercity")
+		
+insert into students (student_id,full_name,gender,university_id)
+values (100,"karthi","male",1001)
+
+insert into students (student_id,full_name,gender,university_id)
+values (101,"Mathan","male",1002),
+		(102,"Joe","male",1003),
+		(103,"Siva","male",1004)
+		
+insert into contacts(contact_id,mobile_number,email_address,student_id)
+values (200,9911991,"kk@gmail.com",100),
+		(201,92123,"ee@gmail.com",101),
+		(202,99393,"ww@gmail.com",102),
+		(203,99999,"qq@gmail.com",103)
+		
+select students.full_name ,students.gender ,
+		contacts.mobile_number ,contacts.email_address,univer.univercity_name  
+from univer 
+inner join students on univer.univercity_id =students.university_id 
+inner join contacts on students.student_id = contacts.student_id 
+
+select students.full_name , students.gender ,contacts.mobile_number ,contacts.email_address ,univer.univercity_name 
+from univer 
+left join students on univer.univercity_id =students.university_id 
+LEFT JOIN contacts ON students.student_id = contacts.student_id;
+
+insert into students (student_id,full_name,gender,university_id)
+values (104,"Boopathi","male",1005)
+
+select * from students s 
+
+select students.full_name , students.gender ,contacts.mobile_number ,contacts.email_address ,univer.univercity_name 
+from univer 
+right join students on univer.univercity_id =students.university_id 
+right JOIN contacts ON students.student_id = contacts.student_id;
+
+
+insert into univer (univercity_id,univercity_name)
+values (1005,"AnnaUnivercity")
+
+select students.full_name , students.gender ,contacts.mobile_number ,contacts.email_address ,univer.univercity_name 
+from univer 
+left join students on univer.univercity_id =students.university_id 
+left JOIN contacts ON students.student_id = contacts.student_id;
+
+
+select students.full_name, students.gender, contacts.mobile_number, contacts.email_address, univer.university_name
+from univer
+full join students ON univer.university_id = students.university_id
+full join contacts ON students.student_id = contacts.student_id;
+
+------------------_--------------------_-----------------_----------
+
+limit and offset
+
+select columname from table limit 
+	*limit means 1 to viwe the limit 
+	* offset means 1 
+
+
+----------------------_--------------_---------_-----------
+
+like & unlike 
+select id , colom name from tablename where colmname like 'm%
+
+----------------_------------------_----------------------------
+
+ANY 
+
+SELECT column_name(s)
+FROM table_name
+WHERE column_name operator ANY
+  (SELECT column_name
+  FROM table_name
+  WHERE condition);
+
+returns a boolean value as a result
+returns TRUE if ALL of the subquery values meet the condition
+
+   SELECT university_id
+FROM students
+WHERE university_id = any(SELECT univercity_id
+  FROM univer 
+  WHERE univercity_id > 100
+----------------_-------_-------_----__----------------------
+2/6/22
+
+select university,(course)
+from univercity u 
+select count(course)
+group by student_id 
+
+select count(university), university from univercity u group by university  
+
+alter table user add (salary int , dept varchar(255))
+
+
+select dept , SUM(salary) from user group by dept
+
+
+select * from user
+
+insert into user (name,gender,student_id,salary,dept)
+values ("Anitha","female",6,33000,"IT"),
+("savitha","female",7,28000,"IT")
+
+select gender,sum(salary) from user group by gender
+
+select name , salary from user group by name order by name
+
+select gender,count(dept)
+from user 
+group by gender 
+having count(dept)>3
+
+select gender,dept  ,count(dept)
+from user
+where salary >15000
+group by dept
+having count(dept)>=1
+
+-------------_---------------------_-----------------------------------
+
+select gender,dept  ,count(dept)
+from user
+where salary >15000
+group by dept
+having count(dept)>=1
+
+select distinct dept from user
+
+select localtimestamp() 
+
+
+select * from user where salary in (25000,20000)
+order by salary
+
+select * from user
+
+SELECT SUBSTRING(name, 1, 3)
+FROM user;
+
+select ucase(name) from user
+
+SELECT ADDTIME("2017-06-15 09:34:21", "2");
+
+select curdate() 
+
+select monthname("202-6-27") 
+
+SELECT TO_DAYS("2017-06-15"); 
+
+
+SELECT LAST_INSERT_ID();
+
+SELECT CONVERT("2017-08-29", DATE);
+
+SELECT CAST("2017-08-29" AS DATE);
+
+select * from user 
+where not dept = "cse"
+
+select name from user 
+union 
+select univercity_name from univer 
+union select  univercity_id from univer
+
+
+select name from user 
+union select gender from user
+union select  univercity_id from univer
+
+
+select name from user 
+union all 
+select  univercity_id from univer
+
+
+TRUNCATE TABLE univer;
+
+
+
+3/6/22
+
+--  only month all year  checking 
+select * from byer where month(purchase_date) = month (current_date()- interval 1 month)
+
+select * from byer where year(purchase_date) = year(current_date()- interval 1 year)
+
+select * from byer  where month(purchase_date)  = month (current_date() - interval 1 month)
+
+select * from byer  where year (purchase_date) = year (current_date() - interval 1 year)
+
+select * from byer where month(purchase_date)= 4 and year(purchase_date)=year(now())
+
+select byer_name,purchase_date from byer where year (purchase_date) = year (now()-interval 1 year)
+
+----------_------------------_------------------_-------------------
+ 
+current week 
+
+select * from byer where purchase_date> now() -  interval 5 week ;
+
+select * from byer where purchase_date = current_date()
+
+
+
+check 4:25pm
+
+select * from byer
+where purchase_date >now()- interval 12 month 
+
+select byer_name,purchase_date
+from byer 
+where date(purchase_date)=date(now()) 
+
+
+-- search a letter in particular colm
+select * from byer
+where byer_name like "%b%"
+
+select * from byer 
+where byer_name like "%h"
+
+
+select day(purchase_date) , dayname(purchase_date),monthname(purchase_date)  from byer  order by purchase_date 
+
+
+(
+'perview',
+'1',
+'{"page":"/prodcuts"}',
+'{"name":"Edge","os":"Windwos","resolution":{"x":2500,"y":1900}}'
+),
+(
+'purchae',
+'3',
+'{"amount":300}',
+'{"name":"safari","os":"Mac","resolution":{"x":1240,"y":2000}}'
+),
+(
+'purchase',
+'3',
+'{amount":2000}',
+'{"name":"Edge","os":"Windwos","resolution":{"x":2500,"y":1900}}'
+);(
+'perview',
+'1',
+'{"page":"/prodcuts"}',
+'{"name":"Edge","os":"Windwos","resolution":{"x":2500,"y":1900}}'
+),
+(
+'purchae',
+'3',
+'{"amount":300}',
+'{"name":"safari","os":"Mac","resolution":{"x":1240,"y":2000}}'
+),
+(
+'purchase',
+'3',
+'{amount":2000}',
+'{"name":"Edge","os":"Windwos","resolution":{"x":2500,"y":1900}}'
+);
+
+
+create table seller(
+seller_id int ,
+seller_companyname varchar(50),
+product_id int  auto_increment ,
+product_name varchar(60),
+amount int ,
+manufact_date TIMESTAMP ,
+expery_date date,
+primary key(product_id)
+)
+
+insert into seller (seller_id,seller_companyname,product_name,amount,manufact_date,expery_date)
+values	(16,"Sri","normal",750,now(),"2022-7-22")
+
+
+
+
+
+create table byer(
+byer_id int,
+byer_name varchar(50),
+product_id int ,
+amount int,
+purchase_date date
+)
+
+
+insert into byer(byer_id,byer_name,product_id,amount,purchase_date)
+values 		(8,"Pathi",14,300,"2022-1-1"),
+		(9,"Jyothis",12,1000,"2022-2-2"),
+		(10,"kumar",12,2000,"2021-2-1")
+		
+		
+-- inner join		
+select seller.seller_companyname  , seller.product_name ,seller.amount ,
+		byer.product_id ,byer.byer_name 
+from seller  
+inner join byer on seller.seller_id =byer.product_id 
+
+
+-- datebetween
+select * from byer  where purchase_date between "2021-02-01" and "2022-5-10" order by purchase_date 
+
+-- select purchase_date from byer b where purchase_date  >= DATE(NOW()) - INTERVAL 7 DAY
+
+
+-- select * from byer where purchase_date = current_date() - interval 1 year ; 
+
+-- SELECT * FROM byer
+-- WHERE  MONTH(purchase_date) = MONTH(CURRENT_DATE - INTERVAL 1 MONTH)
+
+
+
+
+
+--  year
+select * from byer 
+where year(purchase_date) = year(current_date - interval 0 year)
+
+-- month
+select * from byer 
+where year (purchase_date) = year(current_date- interval 0 year)
+and month(purchase_date) = month(current_date - interval 1 month)
+
+-- week
+select * from byer 
+where year (purchase_date) = year(current_date- interval 0 month)
+and month(purchase_date) = month(current_date - interval 1 month)
+and week(purchase_date) = week(current_date - interval 1 week)
+
+
+
+
+insert into byer(byer_id,byer_name,product_id,amount,purchase_date)
+values (12,"sadham",11,3200,"2022-6-2")
+
+-- day
+select * from byer where purchase_date  = current_date()  - interval 3 day 
+
+
+select * from byer  where purchase_date ="2022-6-3"
+
+-- search a letter in particular colm
+-- syntax
+-- select * from tablename where coln name like %a%
+
+
+select * from byer
+where byer_name like "%a%"
+
+select * from byer 
+where byer_name like "%h"
+
+select product_id,byer_name ,purchase_date  ,
+case 
+	when product_id >=11 then "seller_id matched "
+	else "plz contact your dealer "
+	end 
+	from byer 
+
+select current_timestamp() 
+
+
+-- select day(purchase_date) , dayname(purchase_date),monthname(purchase_date)  from byer  order by purchase_date 
+-- update tablename set colmname = colmname+value
+update byer set amount = amount+101
+
+create table browser(
+id int auto_increment primary key,
+browser_name varchar(255),
+visitor  varchar(255),
+properties json,
+browser json
+);
+
+insert into browser(browser_name, visitor,properties, browser) 
+values (
+  'pageview', 
+   '1',
+   '{ "page": "/" }',
+   '{ "name": "Safari", "os": "Mac", "resolution": { "x": 1920, "y": 1080 } }'
+),
+('pageview', 
+  '2',
+  '{ "page": "/contact" }',
+  '{ "name": "Firefox", "os": "Windows", "resolution": { "x": 2560, "y": 1600 } }'
+),
+(
+  'pageview', 
+  '1',
+  '{ "page": "/products" }',
+  '{ "name": "Safari", "os": "Mac", "resolution": { "x": 1920, "y": 1080 } }'
+),
+(
+  'purchase', 
+   '3',
+  '{ "amount": 200 }',
+  '{ "name": "Firefox", "os": "Windows", "resolution": { "x": 1600, "y": 900 } }'
+),
+(
+  'purchase', 
+   '4',
+  '{ "amount": 150 }',
+  '{ "name": "Firefox", "os": "Windows", "resolution": { "x": 1280, "y": 800 } }'
+),
+(
+  'purchase', 
+  '4',
+  '{ "amount": 500 }',
+  '{ "name": "Chrome", "os": "Windows", "resolution": { "x": 1680, "y": 1050 } }'
+);
+
+select id, browser-> '$.os' browser,
+count(browser)
+from browser
+group by browser->'$.os'
+
+
+select visitor , sum(properties->'$.amount') revenue
+from browser 
+where properties ->'$.amount'>0
+group by visitor 
+
+select id, browser-> '$.resolution' browser
+from browser
+where properties -> '$.resolution'
+group by visitor 
+
+
+
+
+CREATE PROCEDURE newdata.callseller()
+begin
+END
+
+call callByer(@m);
+select @m
+
+call callByer(2);
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `newdata`.`callByer`(in var1 int)
+begin
+select * from byer limit var1;
+select count(amount) as total  from byer;
+end
+
+
+
+
+in high varchar(100), out hh varchar(100),
+
+
+
+
+-- select max(amount) into high from byer;
+-- select * from byer where byer_name = high;
+-- select * from byer where byer_name =hh;
+-- 	select count(product_id)
+-- 	into hh
+-- 	from byer
+-- 	where    = high;
+-- 	select * from byer where byer.byer_name=age;
+
+-- 	select * from byer where byer_name = high;
+
+	select max(amount) into high from byer;
+
+
+declare myamount int;
+if myamount >1000 then
+update byer set amount = 'plz visit counter 1-3' where amount =high;
+else
+update byer set amount = 'plz goto 3-5 ' where amount = high;
+end if;
+
+try to solve search id by amount : paramter(INOUT var1 INT)
+ SELECT amount INTO var1 FROM byer WHERE byer_id = var1;  
+
+try  did not work
+
+begin
+	 select 
+	 case 
+	 when amount <100 then 'go to 2nd counter make fastest payment'
+	 when amount between 100 and 1000 then 'goto 3rd counter to fastest payment'
+	 else 'plz visit again'
+end  
+from byer;
+
+
+finished :--------____________-____---------
+update byer 
+	set byer_name=name,
+	product_id =name2
+	where byer_id =11;
+select * from byer;
+
+para (name varchar(200),name2 int)
+ 
+
+8/6/22
+
+ifelse check 
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `task`.`cehck_loo`(in student_id int ,out class varchar(20))
+begin
+	declare age1 int default 0;
+select age into age1 from student_detailss where id = student_id;
+if age1 < 20 then set class = 'wait docter Mr.Karthi come';
+elseif age1<=35 then set class  ='wait docter come ';
+elseif age1>=36 then set class = 'plz wait docter busy';
+else set class = 'plz ';
+end if;
+end
+
+
+
+
+insert into byer (byer_id,byer_name,product_id,amount,purchase_date)
+	values(p_byer_id,p_byer_name,p_product_id,p_amount,p_purchase_date);
+select byer_name  from byer;
